@@ -1,0 +1,33 @@
+package BinarySeach;
+import javax.xml.stream.events.StartDocument;
+public class Ceiling {
+    static void main(String[] args) {
+        int[] arr ={1,2,3,5,9,14,16,24};
+        int target = 15;
+        System.out.println(Celling(arr,target));
+    }
+    //return the index : smallest number >= target
+    static int Celling(int[] arr, int target){
+        // if target value is greater then last element in array
+        if(target>arr[arr.length-1]){
+            return -1;
+        }
+        int start = 0;
+        int end = arr.length-1;
+        //find the middle element
+        while(start<=end) {
+            int mid = start + (end-start)/2;
+
+            if (arr[mid] > target) {
+                end = mid - 1;
+
+            } else if (arr[mid] < target) {
+
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return start;
+    }
+}
