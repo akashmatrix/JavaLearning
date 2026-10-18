@@ -9,4 +9,3 @@ public class OddOrEven {
         return (n&1) == 1;
         }
 }
- 
